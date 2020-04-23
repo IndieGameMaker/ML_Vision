@@ -8,13 +8,15 @@ public class AgentVision : Agent
     private Transform tr;
     private Rigidbody rb;
 
-    public float moveSpeed = 2.0f;
-    public float turnSpeed = 300.0f;
+    private float moveSpeed = 1.0f;
+    private float turnSpeed = 300.0f;
+    private int _maxStep = 10000;
     public float range = 50.0f;
     public StageManager stageManager;
 
     public override void Initialize()
     {
+        maxStep = _maxStep;
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
     }
@@ -92,6 +94,10 @@ public class AgentVision : Agent
             SetReward(-1.0f);
             Destroy(coll.gameObject);
             EndEpisode();
+        }
+        if (coll.collider.CompareTag("DEAD_ZONE"))
+        {
+            AddReward(-1.0f/(float)maxStep);
         }
     }
 
