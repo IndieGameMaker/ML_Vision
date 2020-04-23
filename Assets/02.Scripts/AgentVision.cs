@@ -84,7 +84,7 @@ public class AgentVision : Agent
     {
         if (coll.collider.CompareTag("GOOD"))
         {
-            SetReward(+1.0f);
+            AddReward(+1.0f);
             Destroy(coll.gameObject);
         }
         if (coll.collider.CompareTag("BAD"))
