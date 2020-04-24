@@ -8,7 +8,7 @@ public class AgentVision : Agent
     private Transform tr;
     private Rigidbody rb;
 
-    private float moveSpeed = 1.0f;
+    private float moveSpeed = 0.5f;
     private float turnSpeed = 300.0f;
     private int _maxStep = 10000;
     public float range = 50.0f;

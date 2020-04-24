@@ -872,8 +872,6 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   maxStep: 5000
-  moveSpeed: 0.5
-  turnSpeed: 300
   range: 50
   stageManager: {fileID: 0}
 --- !u!114 &2605328105079622463
